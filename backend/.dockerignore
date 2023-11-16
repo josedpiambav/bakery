@@ -1,0 +1,6 @@
+.strapi
+dist
+node_modules
+.editorconfig
+.dockerignore
+Dockerfile

@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: database
+    image: postgres:13.10-alpine3.17
+    ports:
+      - ':${DATABASE_PORT}'
+    volumes:
+      - database:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    restart: always
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', '${DATABASE_USERNAME}']
+      interval: 10s
+      retries: 5
+    networks:
+      - bakery_test
+
+  backend:
+    depends_on:
+      database:
+        condition: service_healthy
+    container_name: backend
+    image: backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./backend/.env
+      - ./.env
+    ports:
+      - '1337:1337'
+    environment:
+      DATABASE_HOST: database
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - bakery_test
+    
+volumes:
+  database:
+    name: database
+
+networks:
+  bakery_test:
+    name: bakery_test
+    driver: bridge
