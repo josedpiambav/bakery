@@ -132,7 +132,6 @@ const useStyles = makeStyles({
   contentVector: {
     placeSelf: 'center',
     paddingLeft: '92px !important'
-
   },
   textVector: {
     fontFamily: "'Bebas Neue'",

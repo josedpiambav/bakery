@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexDirection: 'row',
       padding: 2,
+      marginBottom: '230px'
     },
     imgContent: {
       width: '100%',
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '105px'
     },
     card: {
-      width: "411px",
+      width: "auto",
       height: "559px",
       margin: "10px",
       padding: "20px",

@@ -29,8 +29,8 @@ const HeroImgAndText: React.FC<HeroProps> = ({
       className={classes.hero}
       style={{
         backgroundImage: `url(${RectangleCareer})`,
-        backgroundSize: "cover",
-        height: "732px",
+        backgroundSize: "100% 100%",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",

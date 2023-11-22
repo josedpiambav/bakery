@@ -102,6 +102,7 @@ const Career = () => {
                 borderTop: "19px solid white",
                 borderRight: "19px solid white",
                 left: "66px",
+                maxWidth: '100%'
               }}
             ></div>
           </Box>

@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <Box
-      sx={{ bgcolor: "#3F3939", color: "white", p: 6 }}
+      sx={{ bgcolor: "#3F3939", color: "white", padding: "48px 40px 0 48px" }}
       className={classes.footer}
     >
       <img src={logoFooter} alt="Logo" className={classes.img} />
@@ -104,9 +104,11 @@ const Footer = () => {
           </Grid>
         </Grid>
       </Container>
-      <Typography variant="body2" className={classes.footerText}>
-        © 2023 Bäcker Schlüter. All Rights Reserved
-      </Typography>
+      <div style={{ height: "9vh", display: "flex", alignItems: "flex-end" }}>
+        <Typography variant="body2" className={classes.footerText}>
+          © 2023 Bäcker Schlüter. All Rights Reserved
+        </Typography>
+      </div>
     </Box>
   );
 };

@@ -107,16 +107,19 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
       </Typography>
       <div className={classes.contentCardProducts}>
         {dataProd.map((item, i) => (
-          <div className={classes.componentCard}>
+          <div key={i} className={classes.componentCard}>
           <Card className={classes.card} style={{ boxShadow: 'none' }}>
             <CardActionArea>
+              <div style={{ textAlign: '-webkit-center' as any }}>
               <CardMedia
                 component="img"
                 height="340"
-                width="1340"
+                width="50%"
                 image={item.img}
                 alt={item.title}
+                style={{ width: '50%' }}
               />
+              </div>
               <CardContent>
                 <Typography component="div" className={classes.type}>
                   {item.type}

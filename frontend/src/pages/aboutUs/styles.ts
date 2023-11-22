@@ -32,10 +32,11 @@ const useStyles = makeStyles({
     width: '100%',
   },
   collage: {
-    display: 'flex',
-    flexDirection: 'column',
-    margin: '0',
-    width: '100%'
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridAutoRows: '150px',
+    padding: '20px',
+    gridGap: '10px',
   },
   mainDivCollage: {
     margin: '0',
@@ -87,7 +88,54 @@ const useStyles = makeStyles({
       },
   },
   miniCollage: {
-
+    "&:nth-child(1)": {
+      gridColumnStart: 'span 1',
+      gridRowStart: 'span 4'
+    },
+    "&:nth-child(2)": {
+      gridColumnStart: 'span 1',
+      gridRowStart: 'span 4'
+    },
+    "&:nth-child(3)": {
+      gridColumnStart: 'span 1',
+      gridRowStart: 'span 6'
+    },
+    "&:nth-child(4)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 1'
+    },
+    "&:nth-child(5)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 2'
+    },
+    "&:nth-child(6)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 2'
+    },
+    "&:nth-child(7)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 2'
+    }
+  },
+  miniCollage1: {
+    "&:nth-child(1)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 3'
+    },
+    "&:nth-child(2)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 3'
+    }
+  },
+  miniCollage2: {
+    "&:nth-child(1)": {
+      gridColumnStart: 'span 2',
+      gridRowStart: 'span 4'
+    },
+    "&:nth-child(2)": {
+      gridColumnStart: 'span 1',
+      gridRowStart: 'span 4'
+    }
   },
   containerButton: {
     paddingLeft: '98px',
@@ -119,11 +167,17 @@ const useStyles = makeStyles({
     flexDirection: 'column'
   },
   childrenDownCollage: {
-    height: '50%',
-    display: 'flex', 
-    flexDirection: 'row',
-    width: '100%',
-    justifyContent: 'space-between',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridAutoRows: '74%',
+    gridGap: '10px',
+  },
+  childrenDownCollage2: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridAutoRows: '135px',
+    gridGap: '10px',
+    marginTop: '219px',
   },
   imageTop1: {
     width: '689px',

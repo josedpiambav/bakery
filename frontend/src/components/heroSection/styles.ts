@@ -13,7 +13,7 @@ export const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
-    paddingLeft: "2rem",
+    paddingLeft: "10rem",
     textShadow: "2px 2px 4px #000000",
   }),
   text: {
@@ -24,14 +24,12 @@ export const useStyles = makeStyles({
     lineHeight: "64px",
     width: "30%",
     color: "white",
-    marginLeft: "14rem",
   },
   buttons: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginLeft: "14rem",
     width: "23rem"
   },
   button: {

@@ -28,13 +28,13 @@ const Hero: React.FC<HeroProps> = ({ images, text, textButtons }) => {
       className={classes.hero}
       style={{
         backgroundImage: `url(${images})`,
-        backgroundSize: "cover",
-        height: "732px",
+        backgroundSize: "100% 100%",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "flex-start",
-        paddingLeft: "2rem",
+        paddingLeft: "10rem",
         textShadow: "2px 2px 4px #000000",
       }}
     >

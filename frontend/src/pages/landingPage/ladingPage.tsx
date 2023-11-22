@@ -185,31 +185,33 @@ const LandingPage: React.FC = () => {
       </div>
       <ImageCollage item={itemImg} />
       <div className={classes.vector}>
-        <Grid container spacing={2} className={classes.content}>
-          <Grid item xs={12} md={7} className={classes.contentVector}>
-            <Typography className={classes.textVector}>{text2}</Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              className={classes.customButton}
-            >
-              Apply Now
-            </Button>
-          </Grid>
-          <Grid item xs={12} md={5}>
-            <Paper
-              elevation={0}
-              style={{
-                backgroundImage: `url(${VectorImg})`,
-                backgroundSize: "cover",
-                height: "584px",
-                width: "592px",
-                border: "none",
-              }}
-            />
-          </Grid>
-        </Grid>
-      </div>
+  <Grid container spacing={2} className={classes.content} alignItems='center' justifyContent='center'>
+    <Grid item xs={12} md={7} className={classes.contentVector}>
+      <Typography className={classes.textVector}>{text2}</Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.customButton}
+      >
+        Apply Now
+      </Button>
+    </Grid>
+    <Grid item xs={12} md={5}>
+      <Paper
+        elevation={0}
+        style={{
+          backgroundImage: `url(${VectorImg})`,
+          backgroundSize: "contain",
+          height: "584px",
+          width: "100%",
+          maxWidth: "592px",
+          border: "none",
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+    </Grid>
+  </Grid>
+</div>
       <Presentation
         imageUrl={Frame}
         title1={title1}
