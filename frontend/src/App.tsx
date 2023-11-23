@@ -9,7 +9,7 @@ import Footer from "components/footer/footer";
 // style
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "react-loading-skeleton/dist/skeleton.css";
-import "./index.css"
+import "./index.css";
 
 function App() {
   const theme = createTheme({
