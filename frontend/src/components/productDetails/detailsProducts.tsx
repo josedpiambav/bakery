@@ -114,10 +114,10 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
               <CardMedia
                 component="img"
                 height="340"
-                width="50%"
+                width="auto"
                 image={item.img}
                 alt={item.title}
-                style={{ width: '50%' }}
+                style={{ width: 'auto' }}
               />
               </div>
               <CardContent>
