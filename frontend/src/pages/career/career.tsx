@@ -10,6 +10,7 @@ import useStyles from "./styles";
 // data
 import { cards } from "data/cards";
 import CollageAbout from "components/collageAbout/collageAbaout";
+import { cardInfo, images } from "data/aboutus";
 
 const Career = () => {
   const classes = useStyles();
@@ -27,7 +28,7 @@ const Career = () => {
         text2={text2}
         text3={text3}
       />
-      <CollageAbout />
+      <CollageAbout item={images} />
       {/* <Box className={classes.root}>
         <Box className={classes.left}>
           <img className={classes.image} src={img1} alt={img1} />
