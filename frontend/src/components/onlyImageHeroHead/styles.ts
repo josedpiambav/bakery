@@ -27,7 +27,7 @@ export const useStyles = makeStyles({
     fontFamily: "'Bebas Neue', sans-serif",
     fontWeight: 700,
     fontSize: "56px",
-    color: "#292929",
+    color: "#FFF",
     marginBottom: 0,
     marginTop: 0
   },

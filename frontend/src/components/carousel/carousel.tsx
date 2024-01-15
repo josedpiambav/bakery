@@ -78,9 +78,9 @@ const CardCarousel: React.FC<CardInfo> = ({ cards }) => {
       </Slider>
       <div className={classes.progressBar}>
         <div className={classes.progressNumber}>
-          <Typography variant="caption" display="block" gutterBottom className={classes.number}>
+          {/* <Typography variant="caption" display="block" gutterBottom className={classes.number}>
             {currentCard + 1}/{cards.length}
-          </Typography>
+          </Typography> */}
         </div>
         <div className={classes.linearProgress}>
           <LinearProgress

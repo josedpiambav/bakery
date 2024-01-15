@@ -19,17 +19,15 @@ const useStyles = makeStyles(({
       copyright: {
       },
       title: {
-        fontFamily: "'Kulim Park' !important",
-        fontWeight: '700 !important',
-        fontSize: "25px !important",
-        lineHeight: "64px !important",
+        fontWeight: '400 !important',
+        fontSize: "55px !important",
+        lineHeight: "60px !important",
         color: '#FFFFFF',
       },
       highlight: {
-        fontFamily: "'Kulim Park' !important",
-        fontWeight: '700 !important',
-        fontSize: "25px !important",
-        lineHeight: "64px !important",
+        fontWeight: '400 !important',
+        fontSize: "55px !important",
+        lineHeight: "60px !important",
         color: '#FFD020',
       },
       firstColumn: {

@@ -22,8 +22,8 @@ const Footer = () => {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom className={classes.title}>
-              EXPERIENCE THE ART OF TRADITIONAL GERMAN BAKING AT{" "}
-              <span className={classes.highlight}>BÄCKER SCHÜTZER</span>
+              <span className={classes.highlight}>Baking Since 1888</span>,
+              We honor tradition through craftsmanship.{" "}
             </Typography>
           </Grid>
           <Grid

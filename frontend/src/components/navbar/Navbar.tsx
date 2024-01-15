@@ -1,15 +1,27 @@
 // react
-import React from "react";
+import React, { useMemo } from "react";
 // mui
 import { AppBar, Toolbar, Typography, Button} from "@mui/material";
 //router
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // styles
 import logo from "assets/img/ladingPage/logo.png";
 import useStyles from "./styles";
 
 const Navbar = () => {
   const classes = useStyles();
+  const location = useLocation();
+
+  const textButton = useMemo(() => {
+    const routeToButtonText: Record<string, string> = {
+      '/': 'Job-Angebote',
+      '/impressum': 'Job-Angebote',
+    };
+  
+    return routeToButtonText[location.pathname] || 'Contact Us';
+  }, [location.pathname]);
+  
+
   return (
     <>
       <div className={classes.preNavbar} />
@@ -44,7 +56,7 @@ const Navbar = () => {
           </div>
           <div>
             <Button color="inherit" component={Link} to="/contactus" className={classes.button}>
-              Contact Us
+              {textButton}
             </Button>
           </div>
         </Toolbar>

@@ -102,9 +102,9 @@ const Item: React.FC<CardProps> = ({ item }) => {
             <Typography variant="h5" component="div" className={classes.title}>
               {item.title}
             </Typography>
-            <Typography variant="h5" component="div" className={classes.title}>
+            {/* <Typography variant="h5" component="div" className={classes.title}>
               €{item.price}
-            </Typography>
+            </Typography> */}
           </div>
           <Typography
             variant="body2"
@@ -122,20 +122,20 @@ const Item: React.FC<CardProps> = ({ item }) => {
 const LandingPage: React.FC = () => {
   const classes = useStyles();
 
-  const text =
-    "Since 1888 in halstenbek, today at 13 locations between schenefeld and elmshorn.";
+/*   const text =
+    "Since 1888 in halstenbek, today at 13 locations between schenefeld and elmshorn."; */
   const text2 =
     "Looking for a job you can loaf? Then become part of the Schlüti family!";
   const title1 = "Welcome to";
   const title2 = "Bäcker Schlüter!";
   const description =
     "For 135 years,Bäcker Schlüter has stood for the best baked goods, handmade and really delicious. Fancy a crisp Meisterling or a warm Franzbrötchen? Come by - we are there for you in 13 branches between Schenefeld and Elmshorn!";
-  const buttonText = "Our Store";
+  const buttonText = "Unsere Fillialen";
 
-  const textButtons = {
+/*   const textButtons = {
     button1: 'our products',
     button2: 'our store',
-  }
+  } */
 
   const leftImages = [
     {
@@ -160,7 +160,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <Hero key={backgroundLanding} images={backgroundLanding} text={text} textButtons={textButtons} />
+      <Hero key={backgroundLanding} images={backgroundLanding} />
       <div className={classes.contentTextTitle}>
         <p className={classes.tileText}>Our products</p>
         <div className={classes.paragraphContainer}>
@@ -180,7 +180,7 @@ const LandingPage: React.FC = () => {
       </div>
       <div className={classes.buttonShop}>
         <Button className={classes.customButton} variant="contained">
-          shop all
+          Unsere Produkte
         </Button>
       </div>
       <ImageCollage item={itemImg} />
@@ -206,7 +206,8 @@ const LandingPage: React.FC = () => {
           width: "100%",
           maxWidth: "592px",
           border: "none",
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: '#FFD020',
         }}
       />
     </Grid>
@@ -221,7 +222,7 @@ const LandingPage: React.FC = () => {
       />
       <div className={classes.root}>
         <Grid container spacing={2} className={classes.classesMainGrid}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5} style={{ marginRight: '25px' }}>
             {leftImages.map((image, index) => (
               <Box
                 key={index}
@@ -231,6 +232,7 @@ const LandingPage: React.FC = () => {
                   alignItems: "flex-end",
                   justifyContent: "center",
                   flexDirection: "row",
+                  marginBottom: index === 0 ? '20px' : '0px'
                 }}
                 className={classes.imageContainer}
               >
@@ -245,7 +247,7 @@ const LandingPage: React.FC = () => {
               </Box>
             ))}
           </Grid>
-          <Grid item xs={12} md={6} className={classes.alterGrid}>
+          <Grid item xs={12} md={5} className={classes.alterGrid}>
             <Box className={classes.containerTextRoot}>
               <Typography variant="h4" className={classes.textTitleRoot}>
                 Backerschluter's Bakery News

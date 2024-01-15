@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridAutoRows: '150px',
     padding: '20px',
-    gridGap: '10px',
+    gridGap: '10px'
   },
   mainDivCollage: {
     margin: '0',
@@ -194,6 +194,76 @@ const useStyles = makeStyles({
     height: '100%',
     objectFit: 'cover',
   },
+  lastDiv: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+    marginTop: '150px',
+    marginBottom: '150px',
+    alignContent: 'flex-start',
+  },
+  secondDiv: {
+    width: '47%',
+    marginTop: '30px',
+  },
+  titleFooter: {
+    fontFamily: "'Bebas Neue'",
+    fontWeight: 400,
+    fontSize: "56px !important",
+    lineHeight: "60px !important",
+    color: '#292929 !important',
+    marginBottom: '28px !important',
+    width: '87%',
+  },
+  descriptionFooter: {
+    fontFamily: "'Kulim Park'",
+    fontWeight: 400,
+    fontSize: "20px !important",
+    lineHeight: "32px !important",
+    color: '#292929  !important',
+    marginBottom: '28px !important',
+  },
+  button1: {
+    background: "#FFD020 !important",
+    width: "171px",
+    height: "50px",
+    borderRadius: "8px",
+    padding: "15px 32px 11px 32px",
+    gap: "8px",
+    color: "back !important",
+    fontFamily: "'Bebas Neue', sans-serif",
+    fontWeight: 700,
+    fontSize: '24px !important',
+    lineHeight: '24px !important',
+    textShadow: 'none',
+  },
+  button2: {
+    width: "171px",
+    height: "50px",
+    borderRadius: "8px",
+    padding: "15px 32px 11px 32px",
+    gap: "8px",
+    fontFamily: "'Bebas Neue', sans-serif",
+    fontWeight: 700,
+    fontSize: '24px !important',
+    lineHeight: '24px !important',
+    textShadow: 'none',
+    marginLeft: '1rem !important',
+    color: '#3F3939  !important'
+  },
+  imgLeft: {
+    width: '332px',
+    height: '424px',
+    margin: 'inherit',
+    float: 'inline-end',
+
+  },
+  imgRight: {
+    width: '521px',
+    height: '865px',
+  }
 })
 
 export default useStyles;

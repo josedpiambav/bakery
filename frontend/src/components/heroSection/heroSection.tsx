@@ -7,8 +7,8 @@ import { useStyles } from "./styles";
 
 interface HeroProps {
   images: string;
-  text: string;
-  textButtons: {
+  text?: string;
+  textButtons?: {
     button1: string
     button2: string
   }
@@ -32,31 +32,37 @@ const Hero: React.FC<HeroProps> = ({ images, text, textButtons }) => {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-end",
         alignItems: "flex-start",
         paddingLeft: "10rem",
         textShadow: "2px 2px 4px #000000",
       }}
     >
-      <p className={classes.text}>{text}</p>
-      <div className={classes.buttons}>
-        <Button
-          color="inherit"
-          component={Link}
-          to="/contactus"
-          className={classes.button}
-        >
-          {textButtons.button1}
-        </Button>
-        <Button
-          color="inherit"
-          variant="outlined"
-          component={Link}
-          to="/contactus"
-          className={classes.button2}
-        >
-          {textButtons.button2}
-        </Button>
+      <div className={classes.content}>
+        {text && (
+          <p className={classes.text}>{text}</p>
+        )}
+        {textButtons && (
+        <div className={classes.buttons}>
+          <Button
+            color="inherit"
+            component={Link}
+            to="/contactus"
+            className={classes.button}
+          >
+            {textButtons.button1}
+          </Button>
+          <Button
+            color="inherit"
+            variant="outlined"
+            component={Link}
+            to="/contactus"
+            className={classes.button2}
+          >
+            {textButtons.button2}
+          </Button>
+        </div>
+        )}
       </div>
     </div>
   );

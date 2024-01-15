@@ -1,26 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 //mui
-import { Button, Typography, Box, Card, CardContent } from "@mui/material";
+import { Button, Typography, Card, CardContent } from "@mui/material";
 // component
 import HeroImgAndText from "components/onlyImageHeroHead/heroImgAndtext";
-import ImageCollage from "components/collageImage/collageImage";
 // img
 import RectangleCareer from "assets/img/career/RectangleCareer.png";
-import img1 from "assets/img/career/img1.png";
-import logoCareer1 from "assets/img/career/logoCareer1.png";
-import logoCareer2 from "assets/img/career/logoCareer2.png";
-import bigImg from "assets/img/career/bigImg.png";
-import smallImg from "assets/img/career/smallImg.png";
-import careerCollage1 from "assets/img/career/careerCollage1.png";
-import careerCollage2 from "assets/img/career/careerCollage2.png";
-import careerCollage3 from "assets/img/career/careerCollage3.png";
-import careerCollage4 from "assets/img/career/careerCollage4.png";
-import careerCollage5 from "assets/img/career/careerCollage5.png";
 // styles
 import useStyles from "./styles";
 // data
 import { cards } from "data/cards";
+import CollageAbout from "components/collageAbout/collageAbaout";
 
 const Career = () => {
   const classes = useStyles();
@@ -28,16 +17,6 @@ const Career = () => {
   const text1 = "Looking for a job you can loaf?";
   const text2 = "Then become part of";
   const text3 = "the Schlüti family!";
-
-  const itemImg = {
-    img1: careerCollage1,
-    img2: careerCollage2,
-    img3: careerCollage3,
-    img4: careerCollage4,
-    img5: careerCollage5,
-    text1: "Echte Qualität.",
-    text2: "Nach Eigenen Rezepturen.",
-  };
 
   return (
     <div>
@@ -48,7 +27,8 @@ const Career = () => {
         text2={text2}
         text3={text3}
       />
-      <Box className={classes.root}>
+      <CollageAbout />
+      {/* <Box className={classes.root}>
         <Box className={classes.left}>
           <img className={classes.image} src={img1} alt={img1} />
           <div className={classes.contentText}>
@@ -107,8 +87,8 @@ const Career = () => {
             ></div>
           </Box>
         </Box>
-      </Box>
-      <ImageCollage item={itemImg} />
+      </Box> */}
+      {/* <ImageCollage item={itemImg} /> */}
       <div className={classes.rootCards}>
         <div>
           <Typography className={classes.titleCareer}>

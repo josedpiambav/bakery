@@ -2,12 +2,17 @@ import React from "react";
 // component
 import Hero from "components/heroSection/heroSection";
 import Carousel from "components/carousel/carousel";
+import CollageAbout from "components/collageAbout/collageAbaout";
 // img
 import imgHeroAbout from "assets/img/aboutUs/imgHeroAbout.png";
+import RectangleBottom from "assets/img/aboutUs/RectangleBottom.png";
+import RectangleRight from "assets/img/aboutUs/RectangleRight.png";
 // mui
 import { Typography, Button } from "@mui/material";
 // style
 import useStyles from "./styles";
+//router
+import { Link } from "react-router-dom";
 // data
 import { cardInfo, images } from "data/aboutus";
 
@@ -16,10 +21,17 @@ const AboutUs: React.FC = () => {
   const text =
     "Bäcker Schlüter: 130 Years of Artisan Excellence - Taste Our Legacy!";
 
-  const textButtons = {
+    const workfooter = {
+      title: `We are bakers with all our heart and that's how we work.`,
+      description: `The traditional baker's craft is always in the foreground for us: we work with real ingredients of the best quality, we make doughs according to our own recipes, we shape, loop and braid by hand.`,
+      button1: 'Our products',
+      button2: 'Our Store',
+     };
+
+  /* const textButtons = {
     button1: "Our Store",
     button2: "Our Products",
-  };
+  }; */
 
   return (
     <div>
@@ -27,7 +39,7 @@ const AboutUs: React.FC = () => {
         key={imgHeroAbout}
         images={imgHeroAbout}
         text={text}
-        textButtons={textButtons}
+        /* textButtons={textButtons} */
       />
       <div className={classes.contentTextTitle}>
         <p className={classes.tileText}>
@@ -44,7 +56,8 @@ const AboutUs: React.FC = () => {
       <div className={classes.root}>
         <Carousel cards={cardInfo} />
       </div>
-      <div className={classes.collage}>
+      <CollageAbout item={images} />
+      {/* <div className={classes.collage}>
         <div className={classes.miniCollage}>
           <div
             style={{
@@ -91,6 +104,61 @@ const AboutUs: React.FC = () => {
           <div className={classes.miniCollage2}>
             <img src={images[6].url} alt="image6" className={classes.image} />
           </div>
+        </div>
+      </div> */}
+
+      <div className={classes.lastDiv}>
+        <div className={classes.secondDiv}>
+          <div>
+            <Typography className={classes.titleFooter}>{workfooter.title}</Typography>
+            <Typography className={classes.descriptionFooter}>
+              {workfooter.description}
+            </Typography>
+            <div>
+              <Button className={classes.button1} color="inherit" component={Link} to="/contactus">
+                {workfooter.button1}
+              </Button>
+              <Button
+                className={classes.button2}
+                color="inherit"
+                variant="outlined"
+                component={Link}
+                to="/contactus"
+              >
+                {workfooter.button2}
+              </Button>
+            </div>
+          </div>
+          <div className={classes.imgLeft}>
+            <div
+              style={{
+                backgroundImage: `url(${RectangleBottom})`,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "nowrap",
+                alignItems: "flex-start",
+                justifyContent: "center",
+              }}
+            />
+          </div>
+        </div>
+        <div className={classes.imgRight}>
+          <div
+            style={{
+              backgroundImage: `url(${RectangleRight})`,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "flex",
+              flexDirection: "column",
+              flexWrap: "nowrap",
+              alignItems: "flex-start",
+              justifyContent: "center",
+            }}
+          />
         </div>
       </div>
     </div>

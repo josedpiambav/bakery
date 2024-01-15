@@ -123,8 +123,9 @@ const useStyles = makeStyles({
     },
   },
   vector: {
-    margin: '150px 0px 150px 0px',
-    height: '642px'
+    padding: '150px 0px 150px 0px',
+    height: '642px',
+    backgroundColor: '#FFD020',
   },
   content: {
     height: '100%'
@@ -210,7 +211,7 @@ const useStyles = makeStyles({
     textShadow: 'none',
   },
   root: {
-    backgroundColor: '#A8A09F',
+    backgroundColor: '#f7f3f3',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
@@ -218,9 +219,11 @@ const useStyles = makeStyles({
     paddingRight: '227px',
     paddingBottom: '125px',
     placeItems: 'center',
+    alignItems: 'flex-start !important',
   },
   classesMainGrid: {
     width: '1059px !important',
+    justifyContent: 'space-around !important',
   },
   imageContainer: {
     height: '395px',
