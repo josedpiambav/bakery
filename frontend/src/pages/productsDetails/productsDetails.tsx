@@ -1,9 +1,9 @@
 import React from 'react';
-import Presentation from 'components/products/products';
+import Presentation from 'components/productDetails/detailsProducts';
 import { productData } from 'data/product';
 import useStyles from './styles';
 
-const Products = () => {
+const ProductsDetails = () => {
     const classes = useStyles();
   return (
     <div className={classes.contained}>
@@ -12,4 +12,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsDetails;

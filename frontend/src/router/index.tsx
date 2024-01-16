@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import LadingPage from "pages/landingPage/ladingPage";
 import AboutUs from "pages/aboutUs/aboutUs";
 import Products from 'pages/products/products';
+import ProductsDetails from 'pages/productsDetails/productsDetails';
 import Career from 'pages/career/career';
 import CareerDetails from 'pages/careerDetail/careerDetails';
 import NewDetail from 'pages/newDetail/newDetail';
@@ -20,6 +21,7 @@ const Index = () => {
         <Route path="/" element={<LadingPage />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/details-products" element={<ProductsDetails />} />
         <Route path="/jobs" element={<Career />} />
         <Route path="/careerDetail" element={<CareerDetails />} />
         <Route path="/news" element={<News />} />

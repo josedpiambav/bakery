@@ -101,13 +101,13 @@ const useStyles = makeStyles({
   },
   buttonCareer: {
     background: '#FFFFFF !important',
-    borderRadius: '23px !important',
+    borderRadius: '5px !important',
     color: 'black !important',
   },
   buttonCareerSelect: {
-    background: '#00425c !important',
-    borderRadius: '23px !important',
-    color: 'white !important',
+    background: '#3F3939 !important',
+    borderRadius: '5px !important',
+    color: '#FFD020 !important',
   },
   contentCards: {
     display: "flex",
@@ -126,9 +126,9 @@ const useStyles = makeStyles({
     marginBottom: '32px',
   },
   smallDiv: {
-    background: '#f7f7f7',
+    background: '#f4f4f4',
     padding: '8px',
-    borderRadius: '22px',
+    borderRadius: '5px',
   },
   times: {
     display: 'flex',
@@ -140,6 +140,7 @@ const useStyles = makeStyles({
     marginBottom: '25px'
   },
   titleCard: {
+    fontFamily: "'Kulim Park' !important",
     fontWeight: '700 !important',
     fontSize: "20px !important",
     lineHeight: "32px !important",
@@ -167,7 +168,7 @@ const useStyles = makeStyles({
   buttonCard: {
     width: '86px',
     height: '35px',
-    borderRadius: '8px',
+    borderRadius: '10px',
     padding: '11px 28px 11px 28px',
     background: '#FFD020 !important',
     fontWeight: '700 !important',

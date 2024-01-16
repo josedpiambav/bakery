@@ -7,10 +7,13 @@ import HeroImgAndText from "components/onlyImageHeroHead/heroImgAndtext";
 import RectangleCareer from "assets/img/career/RectangleCareer.png";
 // styles
 import useStyles from "./styles";
+// icon
+import iconButton from "assets/img/jobs/icon.png";
+import iconButtonSelect from "assets/img/jobs/iconSelect.png";
 // data
 import { cards } from "data/cards";
-import CollageAbout from "components/collageAbout/collageAbaout";
-import { cardInfo, images } from "data/aboutus";
+import CollageCareer from "components/collageCareer/collageCareer";
+import { images } from "data/jobs";
 
 const Career = () => {
   const classes = useStyles();
@@ -28,7 +31,7 @@ const Career = () => {
         text2={text2}
         text3={text3}
       />
-      <CollageAbout item={images} />
+      <CollageCareer item={images} />
       {/* <Box className={classes.root}>
         <Box className={classes.left}>
           <img className={classes.image} src={img1} alt={img1} />
@@ -97,13 +100,36 @@ const Career = () => {
           </Typography>
           <Button
             variant="outlined"
+            className={classes.buttonCareer}
+            style={{
+              marginRight: "10px",
+              border: "1px solid rgb(0 0 0 / 50%)",
+            }}
+            startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
+          >
+            Signature
+          </Button>
+          <Button
+            variant="outlined"
+            className={classes.buttonCareer}
+            style={{
+              marginRight: "10px",
+              border: "1px solid rgb(0 0 0 / 50%)",
+            }}
+            startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
+          >
+            Signature
+          </Button>
+          <Button
+            variant="outlined"
             className={classes.buttonCareerSelect}
             style={{
               marginRight: "10px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
+            startIcon={<img src={iconButtonSelect} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
-            All
+            Signature
           </Button>
           <Button
             variant="outlined"
@@ -112,8 +138,9 @@ const Career = () => {
               marginRight: "10px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
+            startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
-            Büroartikel
+            Signature
           </Button>
           <Button
             variant="outlined"
@@ -122,8 +149,20 @@ const Career = () => {
               marginRight: "10px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
+            startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
-            Corona Ambulanz
+            Signature
+          </Button>
+          <Button
+            variant="outlined"
+            className={classes.buttonCareer}
+            style={{
+              marginRight: "10px",
+              border: "1px solid rgb(0 0 0 / 50%)",
+            }}
+            startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
+          >
+            Signature
           </Button>
         </div>
         <div className={classes.contentCards}>
