@@ -31,13 +31,16 @@ const CardCarousel: React.FC<CardInfo> = ({ cards }) => {
   const [currentCard, setCurrentCard] = useState(0);
   const sliderRef = useRef<Slider>(null);
 
+  const visibleCards = 3.5; // Ajusta este valor según tus necesidades
+  const totalScrollableCards = cards.length - visibleCards;
+
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 3.5,
     slidesToScroll: 1,
-    beforeChange: (current: number, next: number) => setCurrentCard(next),
+    beforeChange: (current: number, next: number) => setCurrentCard(next / totalScrollableCards * 100),
   };
 
   const goToPrev = () => {
@@ -85,7 +88,7 @@ const CardCarousel: React.FC<CardInfo> = ({ cards }) => {
         <div className={classes.linearProgress}>
           <LinearProgress
             variant="determinate"
-            value={(currentCard / (cards.length - 1)) * 100}
+            value={currentCard}
             style={{ backgroundColor: 'rgb(241 241 241)' }}
           />
         </div>

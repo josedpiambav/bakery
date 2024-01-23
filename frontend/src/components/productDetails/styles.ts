@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "-webkit-center" as any,
   },
   titleLarge: {
-    paddingBottom: "2px",
     paddingTop: "25px",
     fontWeight: '400  !important"',
     fontSize: "32px !important",
     lineHeight: "32px !important",
+    paddingBottom: '33px',
   },
   containerDes: {
     display: "flex",
@@ -61,9 +61,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "25px",
     fontFamily: "'Kulim Park' !important",
     fontWeight: '400  !important"',
-    fontSize: "16px !important",
-    lineHeight: "24px !important",
+    fontSize: "20px !important",
+    lineHeight: "32px !important",
     width: "50%",
+    color: "#6a6a6a"
   },
   description: {
     paddingBottom: "25px",
@@ -72,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px !important",
     lineHeight: "24px !important",
     width: "69%",
+    color: "rgb(81 117 149)"
   },
   description1: {
     paddingBottom: "25px",
@@ -85,7 +87,14 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '700  !important"',
     fontSize: "20px !important",
     lineHeight: "28px !important",
-    color: '#979797  !important'
+    color: '#979797  !important',
+    width: '62%',
+  },
+  je: {
+    fontWeight: '700  !important"',
+    fontSize: "20px !important",
+    lineHeight: "28px !important",
+    color: '#979797  !important',
   },
   name: {
     fontFamily: "'Kulim Park' !important",

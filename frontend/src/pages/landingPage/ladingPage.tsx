@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 // components
 import Hero from "components/heroSection/heroSection";
 import ImageCollage from "components/collageImage/collageImage";
@@ -121,6 +122,7 @@ const Item: React.FC<CardProps> = ({ item }) => {
 
 const LandingPage: React.FC = () => {
   const classes = useStyles();
+  const navigate = useNavigate();
 
 /*   const text =
     "Since 1888 in halstenbek, today at 13 locations between schenefeld and elmshorn."; */
@@ -142,7 +144,7 @@ const LandingPage: React.FC = () => {
       url: leftImg1,
       text: "Vegan bread in the summer",
       icon: (
-        <IconButton color="primary">
+        <IconButton color="primary" onClick={() => navigate("/products")}>
           <FavoriteIcon />
         </IconButton>
       ),
@@ -151,7 +153,7 @@ const LandingPage: React.FC = () => {
       url: leftImg2,
       text: "Explore Our Delicious Creations!",
       icon: (
-        <IconButton color="primary">
+        <IconButton color="primary" onClick={() => navigate("/products")}>
           <FavoriteIcon />
         </IconButton>
       ),
@@ -240,7 +242,7 @@ const LandingPage: React.FC = () => {
                   <Typography variant="body1" className={classes.textRoot}>
                     {image.text}
                   </Typography>
-                  <IconButton>
+                  <IconButton onClick={() => navigate("/products")}>
                     <img src={arrowRightCircle} alt="icon" />
                   </IconButton>
                 </Box>

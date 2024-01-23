@@ -53,7 +53,8 @@ const useStyles = makeStyles(({
         fontSize: "16px !important",
         lineHeight: "24px !important",
         color: '#FFFFFF',
-        marginBottom: '12px !important'
+        marginBottom: '12px !important',
+        textDecoration: 'none'
       },
       footerText: {
         fontFamily: "'Kulim Park' !important",

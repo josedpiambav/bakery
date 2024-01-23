@@ -102,7 +102,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareer}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
@@ -113,7 +113,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareer}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
@@ -124,7 +124,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareerSelect}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButtonSelect} alt="icon" style={{width: '24px', height: '24px'}} />}
@@ -135,7 +135,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareer}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
@@ -146,7 +146,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareer}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
@@ -157,7 +157,7 @@ const Career = () => {
             variant="outlined"
             className={classes.buttonCareer}
             style={{
-              marginRight: "10px",
+              marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}

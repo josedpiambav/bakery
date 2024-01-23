@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 // mui
 import { Typography, Button, Paper } from "@mui/material";
 // style
@@ -19,6 +20,7 @@ interface ImgProps {
 
 const CollageAbout: React.FC<ImgProps> = ({ item }) => {
   const classes = useStyles();
+  const navigate = useNavigate();
   return (
     <>
       <div className={classes.miniCollage}>
@@ -39,7 +41,7 @@ const CollageAbout: React.FC<ImgProps> = ({ item }) => {
             {item[0].description}
           </Typography>
           <div className={classes.containerButton}>
-            <Button variant="contained" className={classes.button}>
+            <Button variant="contained" className={classes.button} onClick={() => navigate("/products")}>
               {item[0].buttonLink}
             </Button>
           </div>

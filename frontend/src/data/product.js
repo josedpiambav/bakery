@@ -5,7 +5,7 @@ export const productData = {
   titleLarge: "Dinkel-Haferbrot",
   price: "€2.00",
   description:
-    "Beim Dinkel-Haferbrot zeigt unsere Mühle, was sie drauf hat. Gleich fünf fantastische Getreidezubereitungen, eigens zugemahlen, machen den Reiz dieses milden Brotes mit hohem Vitamin- und Eisengehalt aus: Dinkelmehl, Dinkelgrieß, Roggenvollkornmehl, Dinkelvollkornmehl und Hafer. Und alles verfeinert mit frischer Buttermilch. Ein Fest-Mahl.",
+    "German bread made from spelt flour and oats. Dense, moist inside with a crunchy crust.",
   dropdown1: [],
   dropdown2: [],
 };

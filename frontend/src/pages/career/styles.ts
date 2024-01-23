@@ -95,9 +95,10 @@ const useStyles = makeStyles({
     paddingLeft: '68px',
   },
   titleCareer: {
-    fontWeight: '700 !important',
-    fontSize: "56px !important",
-    lineHeight: "64px !important",
+    fontWeight: '400 !important',
+    fontSize: "53px !important",
+    lineHeight: "58px !important",
+    marginBottom: "15px !important"
   },
   buttonCareer: {
     background: '#FFFFFF !important',

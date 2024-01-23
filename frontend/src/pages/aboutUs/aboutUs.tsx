@@ -115,7 +115,7 @@ const AboutUs: React.FC = () => {
               {workfooter.description}
             </Typography>
             <div>
-              <Button className={classes.button1} color="inherit" component={Link} to="/contactus">
+              <Button className={classes.button1} color="inherit" component={Link} to="/products">
                 {workfooter.button1}
               </Button>
               <Button
@@ -123,7 +123,7 @@ const AboutUs: React.FC = () => {
                 color="inherit"
                 variant="outlined"
                 component={Link}
-                to="/contactus"
+                to="/locations"
               >
                 {workfooter.button2}
               </Button>

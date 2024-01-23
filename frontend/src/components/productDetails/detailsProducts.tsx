@@ -143,9 +143,9 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
             color="text.secondary"
             className={classes.initTable}
           >
-            DURCHSCHNITTLICHE NÄHRWERTANGABEN je 100g
+            DURCHSCHNITTLICHE NÄHRWERTANGABEN
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" className={classes.je}>
             je 100g
           </Typography>
         </div>

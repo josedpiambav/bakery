@@ -22,8 +22,8 @@ const Footer = () => {
         <Grid container spacing={5}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom className={classes.title}>
-              <span className={classes.highlight}>Baking Since 1888</span>,
-              We honor tradition through craftsmanship.{" "}
+              <span className={classes.highlight}>Baking Since 1888</span>, We
+              honor tradition through craftsmanship.{" "}
             </Typography>
           </Grid>
           <Grid
@@ -65,9 +65,30 @@ const Footer = () => {
               >
                 Social Media
               </Typography>
-              <Typography className={classes.textLinks}>Facebook</Typography>
-              <Typography className={classes.textLinks}>Instagram</Typography>
-              <Typography className={classes.textLinks}>LinkedIn</Typography>
+              <a
+                href="https://www.facebook.com/BaeckerSchlueter/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Typography className={classes.textLinks}>Facebook</Typography>
+              </a>
+              <a
+                href="https://www.instagram.com/baeckerschlueter/?hl=de"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Typography className={classes.textLinks}>Instagram</Typography>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/b%C3%A4cker-schl%C3%BCter/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Typography className={classes.textLinks}>LinkedIn</Typography>
+              </a>
             </div>
           </Grid>
           <Grid item xs={6} md={2}>
