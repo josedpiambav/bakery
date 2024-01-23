@@ -27,8 +27,9 @@ const Hero: React.FC<HeroProps> = ({ images, text, textButtons }) => {
     <div
       className={classes.hero}
       style={{
+        background: 'no-repeat',
         backgroundImage: `url(${images})`,
-        backgroundSize: "100% 100%",
+        /* backgroundSize: "100% 100%", */
         height: "100vh",
         display: "flex",
         flexDirection: "column",

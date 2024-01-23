@@ -28,8 +28,10 @@ const HeroImgAndText: React.FC<HeroProps> = ({
     <div
       className={classes.hero}
       style={{
+        background: "no-repeat center center",
         backgroundImage: `url(${RectangleCareer})`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         height: "100vh",
         display: "flex",
         flexDirection: "column",
