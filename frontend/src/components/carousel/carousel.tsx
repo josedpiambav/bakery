@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // component
 import Slider from "react-slick";
 // mui
@@ -29,16 +29,32 @@ interface CardInfo {
 const CardCarousel: React.FC<CardInfo> = ({ cards }) => {
   const classes = useStyles();
   const [currentCard, setCurrentCard] = useState(0);
+  const [mobileView, setMobileView] = useState(false);
   const sliderRef = useRef<Slider>(null);
 
-  const visibleCards = 3.5; // Ajusta este valor según tus necesidades
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const visibleCards =  mobileView ? 1 : 3.5;
   const totalScrollableCards = cards.length - visibleCards;
 
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: mobileView ? 1 : 3.5,
     slidesToScroll: 1,
     beforeChange: (current: number, next: number) => setCurrentCard(next / totalScrollableCards * 100),
   };
@@ -56,7 +72,9 @@ const CardCarousel: React.FC<CardInfo> = ({ cards }) => {
   };
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
+    <div style={{
+      overflowX: 'hidden'
+      }}>
       <Slider {...settings} ref={sliderRef}>
         {cards.map((card, index) => (
           <div key={index}>

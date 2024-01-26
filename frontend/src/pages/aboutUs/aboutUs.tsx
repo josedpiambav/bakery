@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 // component
 import Hero from "components/heroSection/heroSection";
 import Carousel from "components/carousel/carousel";
@@ -18,6 +18,23 @@ import { cardInfo, images } from "data/aboutus";
 
 const AboutUs: React.FC = () => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const text =
     "Bäcker Schlüter: 130 Years of Artisan Excellence - Taste Our Legacy!";
 
@@ -157,6 +174,9 @@ const AboutUs: React.FC = () => {
               flexWrap: "nowrap",
               alignItems: "flex-start",
               justifyContent: "center",
+              backgroundSize: mobileView ? 'contain' : undefined,
+              backgroundRepeat: mobileView ? 'no-repeat' : undefined,
+              backgroundPositionX: mobileView ? 'center' : undefined,
             }}
           />
         </div>

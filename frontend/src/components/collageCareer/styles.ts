@@ -6,6 +6,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+    },
   },
   title: {
     fontWeight: "700 !important",
@@ -15,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingLeft: "98px",
     paddingRight: "98px",
     paddingBottom: "25px",
+    [theme.breakpoints.down('sm')]: {
+      padding: '25px',
+    },
   },
   description: {
     paddingLeft: "90px",
@@ -22,22 +28,27 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingBottom: "25px",
     fontFamily: "'Kulim Park' !important",
     fontWeight: '400  !important"',
-    fontSize: "16px !important",
+    fontSize: "26px !important",
     lineHeight: "24px !important",
+    [theme.breakpoints.down('sm')]: {
+      padding: '25px',
+      fontSize: "16px !important",
+    },
   },
   title2: {
     fontWeight: "400 !important",
     fontSize: "32px !important",
     lineHeight: "32px !important",
     color: "#292929 !important",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "17px !important",
+    },
   },
   description2: {
-    paddingLeft: "131px",
-    paddingRight: "131px",
     paddingBottom: "25px",
     fontFamily: "'Kulim Park' !important",
     fontWeight: '400  !important"',
-    fontSize: "20px !important",
+    fontSize: "29px !important",
     lineHeight: "32px !important",
     color: '#FFD020',
     width: '67%',
@@ -47,16 +58,26 @@ const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
+    [theme.breakpoints.down('sm')]: {
+      padding: "0px",
+      fontSize: "20px !important",
+    },
   },
   description3: {
     fontFamily: "'Kulim Park' !important",
     fontWeight: '400  !important"',
     fontSize: "20px !important",
     lineHeight: "32px !important",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "14px !important",
+    },
   },
   containerButton: {
     paddingLeft: "98px",
     paddingRight: "98px",
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '39px'
+    },
   },
   containerButton2: {
     width: '67%',
@@ -66,6 +87,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: 'center',
     alignItems: 'flex-start',
     alignSelf: 'center',
+    [theme.breakpoints.down('sm')]: {
+      margin: '22px 0px 25px'
+    },
   },
   button: {
     backgroundColor: "#3F3939 !important",
@@ -184,6 +208,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: '700  !important"',
     fontSize: "40px !important",
     lineHeight: "56px !important",
+    [theme.breakpoints.down('sm')]: {
+      padding: '22px',
+    },
   },
   smallImage2: {
     flex: '0 0 50%',

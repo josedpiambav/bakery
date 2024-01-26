@@ -1,13 +1,19 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
 interface StylesProps {
   images: string;
+  isMobile: boolean;
 }
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   hero: (props: StylesProps) => ({
     backgroundImage: `url(${props.images})`,
     backgroundSize: "cover",
+    width: props.isMobile ? "100vw" : "auto",
     height: "732px",
     display: "flex",
     flexDirection: "column",
@@ -15,6 +21,11 @@ export const useStyles = makeStyles({
     alignItems: "flex-start",
     paddingLeft: "10rem",
     textShadow: "2px 2px 4px #000000",
+    [theme.breakpoints.down("sm")]: {
+      height: "14rem !important",
+      width: '100vw',
+      paddingLeft: "0rem",
+    },
   }),
   content: {
     display: 'flex',
@@ -23,6 +34,10 @@ export const useStyles = makeStyles({
     flexWrap: 'nowrap',
     alignItems: 'flex-start',
     height: '55%',
+    [theme.breakpoints.down("sm")]: {
+      height: '100%',
+      width: '100vw'
+    },
   },
   text: {
     marginBottom: "1rem",
@@ -32,13 +47,20 @@ export const useStyles = makeStyles({
     lineHeight: "60px",
     width: "50%",
     color: "white",
+    [theme.breakpoints.down("sm")]: {
+      width: '100%',
+      fontSize: "27px",
+    },
   },
   buttons: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "23rem"
+    width: "23rem",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: 'center',
+    },
   },
   button: {
     background: "#FFD020 !important",
@@ -53,6 +75,11 @@ export const useStyles = makeStyles({
     fontSize: '24px !important',
     lineHeight: '24px !important',
     textShadow: 'none',
+    [theme.breakpoints.down("sm")]: {
+      width: '100px',
+      height: '30px',
+      fontSize: '14px !important',
+    },
   },
   button2: {
     width: "171px",
@@ -66,6 +93,11 @@ export const useStyles = makeStyles({
     lineHeight: '24px !important',
     textShadow: 'none',
     marginLeft: '1rem !important',
-    color: '#FFD020  !important'
+    color: '#FFD020  !important',
+    [theme.breakpoints.down("sm")]: {
+      width: '100px',
+      height: '30px',
+      fontSize: '14px !important',
+    },
   }
-});
+}});

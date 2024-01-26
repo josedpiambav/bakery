@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // components and styles
 import { Button } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useStyles } from "./styles";
 
 interface HeroProps {
@@ -16,7 +18,25 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ images, text, textButtons }) => {
   const [backgroundImage, setBackgroundImage] = useState(images);
-  const classes = useStyles({ images: backgroundImage });
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const classes = useStyles({ images: 'your-image-url', isMobile });
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setBackgroundImage(images);
@@ -29,13 +49,14 @@ const Hero: React.FC<HeroProps> = ({ images, text, textButtons }) => {
       style={{
         background: 'no-repeat',
         backgroundImage: `url(${images})`,
-        backgroundSize: "cover",
-        height: "100vh",
+        backgroundSize: mobileView ? 'contain' : "cover",
+        height: mobileView ? "24vh" : "100vh",
+        width: mobileView ? "100vw" : "",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "flex-start",
-        paddingLeft: "10rem",
+        paddingLeft:  mobileView ? "0rem" : "15vw",
         textShadow: "2px 2px 4px #000000",
       }}
     >

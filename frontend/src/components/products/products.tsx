@@ -55,7 +55,7 @@ const Products: React.FC<MyComponentProps> = ({ items }) => {
   };
 
   return (
-    <div>
+    <div className={classes.mainContent}>
       <div className={classes.headContent}>
         <Typography component="div" className={classes.titleHead}>
           Entdecke unsere Backwaren

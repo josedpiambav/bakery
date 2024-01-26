@@ -1,6 +1,10 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   root: {
     display: "flex",
     flexDirection: "row",
@@ -93,6 +97,9 @@ const useStyles = makeStyles({
   rootCards: {
     marginTop: '91px',
     paddingLeft: '68px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '0px',
+    },
   },
   titleCareer: {
     fontWeight: '400 !important',
@@ -116,11 +123,13 @@ const useStyles = makeStyles({
     flexWrap: "wrap",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginTop: '46px'
+    marginTop: '46px',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: "column"
+    },
   },
   card: {
     width: '388px',
-    height: '176px',
     borderRadius: '16px',
     padding: '18px 22px 18px 22px',
     marginRight: '32px',
@@ -176,6 +185,6 @@ const useStyles = makeStyles({
     fontSize: "16px !important",
     lineHeight: "16px !important",
   }
-});
+}});
 
 export default useStyles;

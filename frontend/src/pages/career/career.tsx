@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 //mui
 import { Button, Typography, Card, CardContent } from "@mui/material";
 // component
@@ -17,6 +17,22 @@ import { images } from "data/jobs";
 
 const Career = () => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const text1 = "Looking for a job you can loaf?";
   const text2 = "Then become part of";
@@ -94,7 +110,9 @@ const Career = () => {
       </Box> */}
       {/* <ImageCollage item={itemImg} /> */}
       <div className={classes.rootCards}>
-        <div>
+        <div style={{
+          paddingLeft: mobileView ? '68px' : '0px',
+        }}>
           <Typography className={classes.titleCareer}>
             Let’s find a job
           </Typography>
@@ -104,6 +122,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
@@ -115,6 +134,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
@@ -126,6 +146,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButtonSelect} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
@@ -137,6 +158,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
@@ -148,6 +170,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >
@@ -159,6 +182,7 @@ const Career = () => {
             style={{
               marginRight: "30px",
               border: "1px solid rgb(0 0 0 / 50%)",
+              marginBottom: mobileView ? "14px" : undefined
             }}
             startIcon={<img src={iconButton} alt="icon" style={{width: '24px', height: '24px'}} />}
           >

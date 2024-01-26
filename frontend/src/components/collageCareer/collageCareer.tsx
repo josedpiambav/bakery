@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // mui
 import { Typography, Button, Paper } from "@mui/material";
 // style
@@ -19,6 +19,22 @@ interface ImgProps {
 
 const CollageCareer: React.FC<ImgProps> = ({ item }) => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div className={classes.miniCollage}>

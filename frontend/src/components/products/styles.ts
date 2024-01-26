@@ -1,6 +1,15 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
+  mainContent: {
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
     headContent: {
         display: 'flex',
         alignItems: 'center',
@@ -111,7 +120,10 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: "24px !important",
     },
     componentCard: {
-      marginBottom: '105px'
+      marginBottom: '105px',
+      [theme.breakpoints.down("sm")]: {
+        width: "100%",
+      },
     },
     card: {
       width: "auto",
@@ -183,6 +195,6 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '5px !important',
         color: '#FFD020 !important',
       },
-  }));
+  }});
 
   export default useStyles;

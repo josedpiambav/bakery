@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 // mui
 import { Box, Container, Grid, Typography } from "@mui/material";
 // img
@@ -69,7 +70,7 @@ const Footer = () => {
                 href="https://www.facebook.com/BaeckerSchlueter/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: "none" }}
               >
                 <Typography className={classes.textLinks}>Facebook</Typography>
               </a>
@@ -77,7 +78,7 @@ const Footer = () => {
                 href="https://www.instagram.com/baeckerschlueter/?hl=de"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: "none" }}
               >
                 <Typography className={classes.textLinks}>Instagram</Typography>
               </a>
@@ -85,7 +86,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/b%C3%A4cker-schl%C3%BCter/about/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: "none" }}
               >
                 <Typography className={classes.textLinks}>LinkedIn</Typography>
               </a>
@@ -102,7 +103,14 @@ const Footer = () => {
             <Typography className={classes.textLinks}>
               Certifications
             </Typography>
-            <Typography className={classes.textLinks}>Impressum</Typography>
+            <Typography className={classes.textLinks}>
+              <Link
+                to="/impressum"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Impressum
+              </Link>
+            </Typography>
             <Typography className={classes.textLinks}>Privacy</Typography>
             <Typography className={classes.textLinks}>
               Term & conditions

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 // mui
 import { Typography, Button, Paper } from "@mui/material";
@@ -19,6 +19,22 @@ interface ImgProps {
 }
 
 const CollageAbout: React.FC<ImgProps> = ({ item }) => {
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const classes = useStyles();
   const navigate = useNavigate();
   return (
@@ -34,6 +50,8 @@ const CollageAbout: React.FC<ImgProps> = ({ item }) => {
             alignItems: "flex-start",
             justifyContent: "center",
             flex: "0 0 47",
+            paddingTop: mobileView ? "50px" : undefined,
+            paddingBottom: mobileView ? "50px" : undefined,
           }}
         >
           <Typography className={classes.title}>{item[0].title}</Typography>

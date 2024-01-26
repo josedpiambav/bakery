@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -17,6 +17,22 @@ import { newsData } from "data/news";
 
 const News = () => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const text =
     "Exceptional delights crafted daily. Experience joy in every handmade bite.";
@@ -61,11 +77,18 @@ const News = () => {
           style={{
             display: "flex",
             textAlign: "-webkit-center" as any,
+            flexDirection: mobileView ? "column" : undefined,
           }}
         >
           {newsData.map((item, i) => (
             <ButtonBase key={i} component={Link} to="/newDetail">
-              <Card className={classes.card} style={{ boxShadow: "none" }}>
+              <Card
+                className={classes.card}
+                style={{
+                  boxShadow: "none",
+                  width: mobileView ? "100%" : undefined,
+                }}
+              >
                 <CardMedia
                   component="img"
                   className={classes.media}

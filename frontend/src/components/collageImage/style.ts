@@ -1,6 +1,10 @@
 import { makeStyles } from '@mui/styles';
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   mainImage: {
     width: '100%',
     height: '967px',
@@ -15,11 +19,21 @@ const useStyles = makeStyles({
     width: '100%',
     height: '618px',
     backgroundSize: '100% 100%',
+    [theme.breakpoints.down("sm")]: {
+      width: '100%',
+      height: '27rem',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat'
+    },
   },
   bottomImage: {
     width: '100%',
     height: '483px',
     backgroundSize: '100% 100%',
+    [theme.breakpoints.down("sm")]: {
+      height: '14rem',
+      width: '100vw',
+    },
   },
   title: {
     fontWeight: '700 !important',
@@ -30,6 +44,6 @@ const useStyles = makeStyles({
     paddingRight: '98px',
     paddingBottom: '25px',
   },
-});
+}});
 
 export default useStyles;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Typography,
@@ -14,6 +14,23 @@ import { newsDetails } from "data/news";
 
 const NewDetail = () => {
   const classes = useStyles();
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <div className={classes.mainBody}>
@@ -54,7 +71,13 @@ const NewDetail = () => {
           </div>
           <div className={classes.contentImg}>
             <Typography className={classes.text}>
-              <img src={newsDetail2} alt={newsDetail2} />
+              <img
+                src={newsDetail2}
+                alt={newsDetail2}
+                style={{
+                  width: mobileView ? "100%" : undefined,
+                }}
+              />
             </Typography>
           </div>
           <div className={classes.contentText}>
@@ -85,7 +108,13 @@ const NewDetail = () => {
           </div>
           <div className={classes.contentImg}>
             <Typography className={classes.text}>
-              <img src={newsDetail1} alt={newsDetail1} />
+              <img
+                src={newsDetail1}
+                alt={newsDetail1}
+                style={{
+                  width: mobileView ? "100%" : undefined,
+                }}
+              />
             </Typography>
           </div>
         </div>
@@ -96,7 +125,14 @@ const NewDetail = () => {
       </Typography>
       <div className={classes.contentCards}>
         {newsDetails.map((item, i) => (
-          <ButtonBase key={i} component={Link} to="/newDetail">
+          <ButtonBase
+            key={i}
+            component={Link}
+            to="/newDetail"
+            style={{
+              width: mobileView ? "100%" : undefined,
+            }}
+          >
             <Card className={classes.card} style={{ boxShadow: "none" }}>
               <CardMedia
                 component="img"

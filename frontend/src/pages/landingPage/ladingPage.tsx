@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // components
 import Hero from "components/heroSection/heroSection";
 import ImageCollage from "components/collageImage/collageImage";
@@ -19,13 +19,14 @@ import {
   Paper,
   Box,
   IconButton,
+  useTheme,
 } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 // style
 import useStyles from "./styles";
 import "react-multi-carousel/lib/styles.css";
 // img
-import backgroundLanding from "assets/img/ladingPage/backgroundLanding.png";
 import Rectangle1 from "assets/img/ladingPage/Rectangle1.png";
 import Rectangle2 from "assets/img/ladingPage/Rectangle2.png";
 import Rectangle3 from "assets/img/ladingPage/Rectangle3.png";
@@ -69,8 +70,8 @@ const itemImg = {
   img3: Rectangle3,
   img4: Rectangle4,
   img5: Rectangle5,
-  text1: 'Echte Qualität.',
-  text2: 'Nach Eigenen Rezepturen.',
+  text1: "Echte Qualität.",
+  text2: "Nach Eigenen Rezepturen.",
 };
 
 interface CardProps {
@@ -85,8 +86,10 @@ interface CardProps {
 
 const Item: React.FC<CardProps> = ({ item }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Card className={classes.card} style={{ boxShadow: 'none' }} >
+    <Card className={classes.card} style={{ boxShadow: "none" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -123,8 +126,24 @@ const Item: React.FC<CardProps> = ({ item }) => {
 const LandingPage: React.FC = () => {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [mobileView, setMobileView] = useState(false);
 
-/*   const text =
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  /*   const text =
     "Since 1888 in halstenbek, today at 13 locations between schenefeld and elmshorn."; */
   const text2 =
     "Looking for a job you can loaf? Then become part of the Schlüti family!";
@@ -134,7 +153,7 @@ const LandingPage: React.FC = () => {
     "For 135 years,Bäcker Schlüter has stood for the best baked goods, handmade and really delicious. Fancy a crisp Meisterling or a warm Franzbrötchen? Come by - we are there for you in 13 branches between Schenefeld and Elmshorn!";
   const buttonText = "Unsere Fillialen";
 
-/*   const textButtons = {
+  /*   const textButtons = {
     button1: 'our products',
     button2: 'our store',
   } */
@@ -162,7 +181,15 @@ const LandingPage: React.FC = () => {
 
   return (
     <div>
-      <Hero key={backgroundLanding} images={backgroundLanding} />
+      <div className={classes.contentVideo}>
+        <video autoPlay loop muted className={classes.video}>
+          <source
+            src="https://firebasestorage.googleapis.com/v0/b/warsages-comisaria.appspot.com/o/B%C3%A4ckerSchl%C3%BCter_Sequenz_Musik_4K_21_9.mp4?alt=media&token=6e3b08ef-aaee-4106-a862-b92ff18d7efe"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      {/* <Hero key={backgroundLanding} images={backgroundLanding} /> */}
       <div className={classes.contentTextTitle}>
         <p className={classes.tileText}>Our products</p>
         <div className={classes.paragraphContainer}>
@@ -187,34 +214,40 @@ const LandingPage: React.FC = () => {
       </div>
       <ImageCollage item={itemImg} />
       <div className={classes.vector}>
-  <Grid container spacing={2} className={classes.content} alignItems='center' justifyContent='center'>
-    <Grid item xs={12} md={7} className={classes.contentVector}>
-      <Typography className={classes.textVector}>{text2}</Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        className={classes.customButton}
-      >
-        Apply Now
-      </Button>
-    </Grid>
-    <Grid item xs={12} md={5}>
-      <Paper
-        elevation={0}
-        style={{
-          backgroundImage: `url(${VectorImg})`,
-          backgroundSize: "contain",
-          height: "584px",
-          width: "100%",
-          maxWidth: "592px",
-          border: "none",
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#FFD020',
-        }}
-      />
-    </Grid>
-  </Grid>
-</div>
+        <Grid
+          container
+          spacing={2}
+          className={classes.content}
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Grid item xs={12} md={7} className={classes.contentVector}>
+            <Typography className={classes.textVector}>{text2}</Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              className={classes.customButton}
+            >
+              Apply Now
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={5}>
+            <Paper
+              elevation={0}
+              style={{
+                backgroundImage: `url(${VectorImg})`,
+                backgroundSize: "contain",
+                height: "584px",
+                width: "100%",
+                maxWidth: "592px",
+                border: "none",
+                backgroundRepeat: "no-repeat",
+                backgroundColor: "#FFD020",
+              }}
+            />
+          </Grid>
+        </Grid>
+      </div>
       <Presentation
         imageUrl={Frame}
         title1={title1}
@@ -224,7 +257,12 @@ const LandingPage: React.FC = () => {
       />
       <div className={classes.root}>
         <Grid container spacing={2} className={classes.classesMainGrid}>
-          <Grid item xs={12} md={5} style={{ marginRight: '25px' }}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            style={mobileView ? {} : { marginRight: "25px" }}
+          >
             {leftImages.map((image, index) => (
               <Box
                 key={index}
@@ -234,7 +272,7 @@ const LandingPage: React.FC = () => {
                   alignItems: "flex-end",
                   justifyContent: "center",
                   flexDirection: "row",
-                  marginBottom: index === 0 ? '20px' : '0px'
+                  marginBottom: index === 0 ? "20px" : "0px",
                 }}
                 className={classes.imageContainer}
               >

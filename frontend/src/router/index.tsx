@@ -12,6 +12,7 @@ import CareerDetails from 'pages/careerDetail/careerDetails';
 import NewDetail from 'pages/newDetail/newDetail';
 import News from 'pages/news/news';
 import Location from 'pages/location/location';
+import Impressum from 'pages/impressum/impressum';
 import Error from 'pages/error';
 
 const Index = () => {
@@ -27,6 +28,7 @@ const Index = () => {
         <Route path="/news" element={<News />} />
         <Route path="/NewDetail" element={<NewDetail />} />
         <Route path="/locations" element={<Location />} />
+        <Route path="/impressum" element={<Impressum />} />
       </Routes>
   );
 }

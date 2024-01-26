@@ -6,6 +6,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    [theme.breakpoints.down("sm")]: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    },
   },
   title: {
     fontWeight: "700 !important",

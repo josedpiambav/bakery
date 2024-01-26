@@ -77,7 +77,7 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
   };
 
   return (
-    <div>
+    <div className={classes.rootComponent}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <IconButton onClick={handleBackClick}>
           <img src={IconBack} alt="Volver atrás" />
@@ -98,7 +98,7 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
         </div>
         <div className={classes.content}></div>
       </div>
-      <div style={{ paddingLeft: "12rem", marginBottom: "92px" }}>
+      <div className={classes.allContentDes}>
         <div className={classes.containerDes}>
           <div className={classes.imgContent}>
             <Typography variant="h4" className={classes.titleLarge}>
@@ -123,12 +123,7 @@ const Presentation: React.FC<MyComponentProps> = ({ items }) => {
       </div>
       <TableContainer
         component={Paper}
-        style={{
-          width: "28%",
-          marginLeft: "12rem",
-          marginBottom: "125px",
-          boxShadow: "none",
-        }}
+        className={classes.table}
       >
         <Typography
           variant="h4"

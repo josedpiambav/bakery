@@ -1,6 +1,15 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
+  rootComponent: {
+    [theme.breakpoints.down("sm")]: {
+      width: '100%'
+    },
+  },
   container: {
     padding: 2,
     display: "flex",
@@ -9,10 +18,18 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "nowrap",
     justifyContent: "center",
     textAlignLast: "center",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "start",
+      display: "inline-block",
+      textAlignLast: 'start',
+      width: '100%'
+    },
   },
   imgContent: {},
   image: {
-    /* width: '100%', */
+    [theme.breakpoints.down("sm")]: {
+      width: '23rem'
+    },
   },
   content: {
     display: "flex",
@@ -20,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-start",
     marginLeft: 2,
     marginRight: "150px",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "1px",
+    },
   },
   titleMedium: {
     fontWeight: '700  !important"',
@@ -36,6 +56,11 @@ const useStyles = makeStyles((theme) => ({
   descriptionHeadContent: {
     width: "100%",
     textAlign: "-webkit-center" as any,
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "start",
+      display: "inline-block",
+      textAlignLast: 'start',
+    },
   },
   titleLarge: {
     paddingTop: "25px",
@@ -44,11 +69,28 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "32px !important",
     paddingBottom: '33px',
   },
+  allContentDes: {
+    paddingLeft: "12rem",
+    marginBottom: "92px",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "start",
+      display: "inline-block",
+      textAlignLast: 'start',
+      paddingLeft: "2rem",
+    },
+  },
   containerDes: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "start",
+      display: "inline-block",
+      textAlignLast: 'start',
+      width: '96%',
+      paddingLeft: "12px"
+    },
   },
   price: {
     paddingBottom: "25px",
@@ -63,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '400  !important"',
     fontSize: "20px !important",
     lineHeight: "32px !important",
-    width: "50%",
+    width: "100%",
     color: "#6a6a6a"
   },
   description: {
@@ -73,7 +115,20 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "16px !important",
     lineHeight: "24px !important",
     width: "69%",
-    color: "rgb(81 117 149)"
+    color: "rgb(81 117 149)",
+    [theme.breakpoints.down("sm")]: {
+      width: '93%',
+    },
+  },
+  table: {
+    width: "28%  !important",
+    marginLeft: "12rem  !important",
+    marginBottom: "125px  !important",
+    boxShadow: "none  !important",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "1rem  !important",
+      width: "89%  !important",
+    },
   },
   description1: {
     paddingBottom: "25px",
@@ -186,6 +241,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "56px !important",
     lineHeight: "64px !important",
     marginLeft: "43px !important",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "1rem !important",
+    },
   },
   title: {
     marginBottom: "10px",
@@ -204,10 +262,16 @@ const useStyles = makeStyles((theme) => ({
   contentCardProducts: {
     display: "flex",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      width: '97%',
+    },
   },
   viewMore: {
     textAlignLast: "center",
   },
-}));
+}});
 
 export default useStyles;

@@ -18,11 +18,27 @@ const HeroImgAndText: React.FC<HeroProps> = ({
 }) => {
   const [backgroundImage, setBackgroundImage] = useState(images);
   const classes = useStyles({ images: backgroundImage });
+  const [mobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    return window.innerWidth <= 1043
+      ? setMobileView(true)
+      : setMobileView(false);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setBackgroundImage(images);
     setTimeout(() => {}, 0);
-  }, [images]);
+  }, [images])
 
   return (
     <div
@@ -30,15 +46,16 @@ const HeroImgAndText: React.FC<HeroProps> = ({
       style={{
         background: "no-repeat center center",
         backgroundImage: `url(${RectangleCareer})`,
-        backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "center",
-        paddingLeft: "2rem",
         textShadow: "2px 2px 4px #000000",
+        backgroundSize: mobileView ? 'contain' : "cover",
+        height: mobileView ? "24vh" : "100vh",
+        width: mobileView ? "100vw" : "",
+        paddingLeft:  mobileView ? "0rem" : "2rem",
       }}
     >
       <div className={classes.div}>

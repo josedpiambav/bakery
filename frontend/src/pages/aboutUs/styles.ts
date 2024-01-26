@@ -1,6 +1,10 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   contentTextTitle: {
     textAlign: "center",
     marginTop: "5rem",
@@ -203,10 +207,17 @@ const useStyles = makeStyles({
     marginTop: '150px',
     marginBottom: '150px',
     alignContent: 'flex-start',
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: 'column'
+    },
   },
   secondDiv: {
     width: '47%',
     marginTop: '30px',
+    [theme.breakpoints.down("sm")]: {
+      width: 'auto',
+      padding: '15px'
+    },
   },
   titleFooter: {
     fontFamily: "'Bebas Neue'",
@@ -263,7 +274,11 @@ const useStyles = makeStyles({
   imgRight: {
     width: '521px',
     height: '865px',
+    [theme.breakpoints.down("sm")]: {
+      width: '100%',
+      height: '512px',
+    },
   }
-})
+}});
 
 export default useStyles;

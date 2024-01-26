@@ -1,10 +1,15 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
 interface StylesProps {
   images: string;
 }
 
-export const useStyles = makeStyles({
+
+export const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   hero: (props: StylesProps) => ({
     backgroundImage: `url(${props.images})`,
     backgroundSize: "cover",
@@ -22,6 +27,9 @@ export const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: '1rem'
+    },
   },
   text1: {
     fontFamily: "'Bebas Neue', sans-serif",
@@ -29,7 +37,10 @@ export const useStyles = makeStyles({
     fontSize: "56px",
     color: "#FFF",
     marginBottom: 0,
-    marginTop: 0
+    marginTop: 0,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+    },
   },
   text2: {
     fontFamily: "'Bebas Neue', sans-serif",
@@ -37,6 +48,9 @@ export const useStyles = makeStyles({
     fontSize: "56px",
     width: "49%",
     color: "#FFD020",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+    },
   },
   buttons: {
     display: "flex",
@@ -74,4 +88,4 @@ export const useStyles = makeStyles({
     marginLeft: '1rem !important',
     color: '#FFD020  !important'
   }
-});
+}});

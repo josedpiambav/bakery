@@ -1,9 +1,16 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
   contained: {
     display: 'flex',
-    marginTop: '100px'
+    marginTop: '100px',
+    [theme.breakpoints.down("sm")]: {
+      width: '100%'
+    },
   },
 
   productInfo: {
@@ -13,6 +20,6 @@ const useStyles = makeStyles({
     width: "100%",
     padding: "20px",
   },
-});
+}});
 
 export default useStyles;

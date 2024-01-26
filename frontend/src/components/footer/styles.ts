@@ -1,11 +1,18 @@
 import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles(() => {
+
+  const theme = useTheme();
+  return {
     img: {
         position: 'absolute',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 1,
+        [theme.breakpoints.down("sm")]: {
+          left: '47%',
+        },
       },
       overlay: {
         position: 'relative',
@@ -64,6 +71,6 @@ const useStyles = makeStyles(({
         color: '#ffffff33 !important',
         marginBottom: '12px !important'
       }
-  }));
+  }});
 
 export default useStyles;
